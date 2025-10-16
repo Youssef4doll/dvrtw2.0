@@ -1,0 +1,26 @@
+<h1 style="text-align:center; font-family:Arial, sans-serif; color:#333;">Liste des auteurs</h1>
+
+<table style="width:80%; margin:20px auto; border-collapse:collapse; font-family:Arial, sans-serif; box-shadow:0 4px 10px rgba(0,0,0,0.1); border-radius:10px; overflow:hidden;">
+    <thead style="background-color:#f4f4f9; color:#333; text-align:left;">
+        <tr>
+            <th style="padding:12px;">ID</th>
+            <th style="padding:12px;">Username</th>
+            <th style="padding:12px;">Email</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for author in authors %}
+            <tr style="border-top:1px solid #eee; transition: background 0.3s;" 
+                onmouseover="this.style.backgroundColor='#f0f8ff';" 
+                onmouseout="this.style.backgroundColor='';">
+                <td style="padding:12px;">{{ author.id }}</td>
+                <td style="padding:12px;">{{ author.username }}</td>
+                <td style="padding:12px;">{{ author.email }}</td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3" style="padding:12px; text-align:center; color:#777;">Aucun auteur trouvé.</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
